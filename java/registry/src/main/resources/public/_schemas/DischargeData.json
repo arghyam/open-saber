@@ -3,43 +3,44 @@
   "type": "object",
   "properties": {
     "Person": {
-      "$ref": "#/definitions/DischargeData"
+      "$ref": "#/definitions/dischargeData"
     }
   },
-  "title":"DischargeData",
+  "title":"dischargeData",
   "required": [
-    "DischargeData"
+    "dischargeData"
   ],
   "definitions": {
-    "DischargeData": {
-      "$id": "#/properties/DischargeData",
+    "dischargeData": {
+      "$id": "#/properties/dischargeData",
       "type": "object",
       "title": "The Discharge Data Schema",
       "required": [
-        "springID",
-        "dischargeDataID",
-        "lpm",
-        "enteredDate"
       ],
       "additionalProperties": true,
       "properties": {
-        "springID": {
-          "$id": "#/properties/springID",
+        "springCode": {
+          "$id": "#/properties/springCode",
           "type": "string",
-          "title": "Spring ID"
+          "title": "Spring Code"
         },
-        "dischargeDataID": {
-          "$id": "#/properties/dischargeDataID",
+        "springName": {
+          "$id": "#/properties/springName",
           "type": "string",
-          "title": "Discharge Data ID"
+          "title": "Spring Name"
         },
-        "lpm": {
-          "$id": "#/properties/lpm",
+        "userId": {
+          "$id": "#/properties/userId",
           "type": "string",
-          "title": "Discharge data count"
+          "title" : "User Id"
         },
-        "enteredDate": {
-          "$id": "#/properties/enteredDate",
+        "dischargeTime": {
+          "$id": "#/properties/dischargeTime",
+          "type": ["string", "null"],
+          "title" : "Discharge Time"
+        },
+        "createdDate": {
+          "$id": "#/properties/createdDate",
           "type": "string",
           "title" : "Created Date"
         }

@@ -3,7 +3,7 @@
   "type": "object",
   "properties": {
     "Person": {
-      "$ref": "#/definitions/Springs"
+      "$ref": "#/definitions/springs"
     }
   },
   "title":"springs",
@@ -11,25 +11,23 @@
     "springs"
   ],
   "definitions": {
-    "Springs": {
-      "$id": "#/properties/Springs",
+    "springs": {
+      "$id": "#/properties/springs",
       "type": "object",
       "title": "The Springs Schema",
       "required": [
-        "springCode",
-        "springName"
       ],
       "additionalProperties": true,
       "properties": {
-        "springID": {
+        "springCode": {
           "$id": "#/properties/springCode",
           "type": "string",
-          "title": "SpringCode"
+          "title": "Spring Code"
         },
         "springName": {
           "$id": "#/properties/springName",
           "type": "string",
-          "title": "Spring name"
+          "title": "Spring Name"
         },
         "organization": {
           "$id": "#/properties/organization",
@@ -53,22 +51,19 @@
         },
         "ownership": {
           "$id": "#/properties/ownership",
-          "type": ["string", "null"],
+          "type": "string",
           "title": "Ownership Number"
         },
         "usage": {
           "$id": "#/properties/usage",
-          "type": "array",
-          "items" : {
-            "type" : ["string", "null"]
-          },
+          "type": ["string", "null"],
           "title": "Spring Usage"
         },
         "images": {
           "$id": "#/properties/images",
-          "items" : {
-            "type" : ["string", "null"]
-          }
+          "type": ["string", "null"],
+          "title": "Spring Image"
+
         },
         "latitude" : {
           "$id": "#/properties/latitude",
