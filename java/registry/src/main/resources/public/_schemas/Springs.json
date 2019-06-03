@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "Person": {
+      "$ref": "#/definitions/Springs"
+    }
+  },
+  "title":"springs",
+  "required": [
+    "springs"
+  ],
+  "definitions": {
+    "Springs": {
+      "$id": "#/properties/Springs",
+      "type": "object",
+      "title": "The Springs Schema",
+      "required": [
+        "springCode",
+        "springName"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "springID": {
+          "$id": "#/properties/springCode",
+          "type": "string",
+          "title": "SpringCode"
+        },
+        "springName": {
+          "$id": "#/properties/springName",
+          "type": "string",
+          "title": "Spring name"
+        },
+        "organization": {
+          "$id": "#/properties/organization",
+          "type": ["string", "null"],
+          "title": "Spring added by "
+        },
+        "uploadedBy": {
+          "$id": "#/properties/uploadedBy",
+          "type": "string",
+          "title": "Uploaded By"
+        },
+        "tenantId": {
+          "$id": "#/properties/tenantId",
+          "type": "string",
+          "title" : "Tenant ID"
+        },
+        "village": {
+          "$id": "#/properties/village",
+          "type": ["string", "null"],
+          "title": "Village"
+        },
+        "ownership": {
+          "$id": "#/properties/ownership",
+          "type": ["string", "null"],
+          "title": "Ownership Number"
+        },
+        "usage": {
+          "$id": "#/properties/usage",
+          "type": "array",
+          "items" : {
+            "type" : ["string", "null"]
+          },
+          "title": "Spring Usage"
+        },
+        "images": {
+          "$id": "#/properties/images",
+          "items" : {
+            "type" : ["string", "null"]
+          }
+        },
+        "latitude" : {
+          "$id": "#/properties/latitude",
+          "type": "string",
+          "title": "Latitude"
+        },
+        "longitude" : {
+          "$id": "#/properties/longitude",
+          "type": "string",
+          "title": "Longitude"
+        },
+        "elevation" : {
+          "$id": "#/properties/elevation",
+          "type": "string",
+          "title": "Elevation"
+        },
+        "crtdDttm": {
+          "$id": "#/properties/crtdDttm",
+          "type": "string",
+          "title" : "Created Date"
+        },
+        "updtDttm": {
+          "$id": "#/properties/updtDttm",
+          "type": "string",
+          "title" : "Updated Date"
+        }
+      }
+    }
+  }
+}

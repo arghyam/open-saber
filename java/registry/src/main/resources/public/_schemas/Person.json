@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "person": {
+      "$ref": "#/definitions/person"
+    }
+  },
+  "title":"person",
+  "required": [
+    "person"
+  ],
+  "definitions": {
+    "person": {
+      "$id": "#/properties/person",
+      "type": "object",
+      "title": "The person Schema",
+      "required": [
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "firstName": {
+          "$id": "#/properties/firstName",
+          "type": "string",
+          "title": "First name"
+        },
+        "lastName": {
+          "$id": "#/properties/lastName",
+          "type": "string",
+          "title": "Last name"
+        },
+        "emailId": {
+          "$id": "#/properties/emailId",
+          "type": "string",
+          "title": "The Email Id Schema",
+          "default": "",
+          "examples": [
+            "joe@gmail.com"
+          ]
+        },
+        "userId": {
+          "$id": "#/properties/userId",
+          "type": "string",
+          "title": "Unique User Id"
+        },
+        "salutation": {
+          "$id": "#/properties/salutation",
+          "type": "string"
+        },
+        "countryCode": {
+          "$id": "#/properties/countryCode",
+          "type": ["string", "null"],
+          "title": "Country Code for Phone Number"
+        },
+        "phoneNumber": {
+          "$id": "#/properties/phoneNumber",
+          "type": ["string", "null"],
+          "title": "Phone Number"
+        },
+        "photo": {
+        "type": ["string", "null"],
+        "contentEncoding": "base64",
+        "mediaType": "image/png"
+      },
+        "crtdDttm": {
+          "$id": "#/properties/crtdDttm",
+          "type": "string",
+          "title" : "Created Date"
+        },
+        "updtDttm": {
+          "$id": "#/properties/updtDttm",
+          "type": "string",
+          "title" : "Updated Date"
+        }
+      }
+    }
+  }
+}
