@@ -11,14 +11,18 @@ import org.keycloak.common.VerificationException;
 import org.keycloak.representations.AccessToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
 
 public class KeyCloakServiceImpl {
 
+
+
 	private static Logger logger = LoggerFactory.getLogger(KeyCloakServiceImpl.class);
 
-	private String ssoUrl = System.getenv("sso_url");
-	private String ssoRealm = System.getenv("sso_realm");
-	private PublicKey publicKey = toPublicKey(System.getenv("sso_publickey"));
+	private String ssoUrl = "http://13.234.251.56:8080/auth/";
+	private String ssoRealm = "Arghyam";
+	private PublicKey publicKey = toPublicKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAggxlcrHCDN9edhkgMxSfwwM8mozxYQOV/v6WA3JCSWKe3F/79UC9hl6gYvyUqJbPuJNADjjVRwYvTKhOvkdxVFHV6w7r1lnALoRhdRk3lpu6TlKl/Ehm0o3yhPbbiCNRrqZjBPv1xmNdT++T4r0pdogrol/eBxn7OjPb2Tn5zklsZgrKjnzGVovAvgq3JcjyaxiYxhPMDmCNSTFF6sPywfumzZSuj4M/xC1/1HnVjJ226wIfGH/y8Mu7qRrYiL99044Q9lsOgbmmpWhXH9kYSITGkHdVodo5SnDp4ojA5MB+XSwfMSW+ezrnOMi0zNTAOA7BH9o13rejROLEI0xfDQIDAQAB");
 
 	public PublicKey getPublicKey() {
 		return publicKey;
