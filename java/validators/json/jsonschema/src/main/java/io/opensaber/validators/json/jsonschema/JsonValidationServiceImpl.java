@@ -1,9 +1,9 @@
 package io.opensaber.validators.json.jsonschema;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.opensaber.registry.middleware.MiddlewareHaltException;
 import io.opensaber.validators.IValidate;
-import java.util.HashMap;
-import java.util.Map;
 import org.everit.json.schema.Schema;
 import org.everit.json.schema.ValidationException;
 import org.everit.json.schema.loader.SchemaLoader;
@@ -11,11 +11,16 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class JsonValidationServiceImpl implements IValidate {
-	private static Logger logger = LoggerFactory.getLogger(JsonValidationServiceImpl.class);
+	private static Logger log = LoggerFactory.getLogger(JsonValidationServiceImpl.class);
 
 	private Map<String, Schema> entitySchemaMap = new HashMap<>();
 	private Map<String, String> definitionMap = new HashMap<>();;
+
+	ObjectMapper objectMapper = new ObjectMapper();
 
 	private Schema getEntitySchema(String entityType) throws MiddlewareHaltException {
 
@@ -26,7 +31,6 @@ public class JsonValidationServiceImpl implements IValidate {
 			try {
 				String definitionContent = definitionMap.get(entityType);
                 JSONObject rawSchema = new JSONObject(definitionContent);
-
 				SchemaLoader schemaLoader = SchemaLoader.builder().schemaJson(rawSchema).draftV7Support()
 						.resolutionScope("http://localhost:8080/_schemas/").build();
 				schema = schemaLoader.load().build();
@@ -40,7 +44,7 @@ public class JsonValidationServiceImpl implements IValidate {
 	}
 
 	@Override
-	public boolean validate(String entityType, String objString) throws MiddlewareHaltException {
+	public boolean validate(String entityType, String objString) throws MiddlewareHaltException, JsonProcessingException {
 		boolean result = false;
 		Schema schema = getEntitySchema(entityType);
 		JSONObject obj = new JSONObject(objString);
@@ -48,10 +52,10 @@ public class JsonValidationServiceImpl implements IValidate {
 			schema.validate(obj); // throws a ValidationException if this object is invalid
 			result = true;
 		} catch (ValidationException e) {
-			logger.error(e.getMessage() + " : " + e.getErrorMessage());
+			log.error(e.getMessage() + " : " + e.getErrorMessage());
 			e.getCausingExceptions().stream()
 					.map(ValidationException::getMessage)
-					.forEach(logger::error);
+					.forEach(log::error);
 			throw new MiddlewareHaltException(e.getMessage());
 		}
 		return result;

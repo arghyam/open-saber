@@ -1,5 +1,6 @@
 package io.opensaber.registry.authorization;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import io.jsonwebtoken.Jwts;
@@ -25,8 +26,10 @@ public class AuthorizationFilter implements Middleware {
 
 	private static final String TOKEN_IS_MISSING = "Authentication header is missing";
 	private static final String VERIFICATION_EXCEPTION = "Authentication token is invalid";
-	private static Logger logger = LoggerFactory.getLogger(AuthorizationFilter.class);
+	private static Logger log = LoggerFactory.getLogger(AuthorizationFilter.class);
 	private KeyCloakServiceImpl keyCloakServiceImpl;
+	private ObjectMapper objectMapper = new ObjectMapper();
+
 	@Autowired
 	private OpenSaberInstrumentation watch;
 
@@ -49,7 +52,7 @@ public class AuthorizationFilter implements Middleware {
 		try {
 			Map<String, Object> mapObject = apiMessage.getRequestWrapper().getRequestHeaderMap();
 			Object tokenObject = mapObject.get(Constants.TOKEN_OBJECT);
-			logger.error("***********************************"+tokenObject.toString());
+			log.error("***********************************"+tokenObject.toString());
 			if (tokenObject == null || tokenObject.toString().trim().isEmpty()) {
 				throw new MiddlewareHaltException(TOKEN_IS_MISSING);
 			}
@@ -61,13 +64,14 @@ public class AuthorizationFilter implements Middleware {
 			if (!userId.trim().isEmpty()) {
 
 				if (mapObject.containsKey("userName")) {
-					logger.debug("Access token for user {} verified successfully with KeyCloak server !",
+					log.info("Access token for user {} verified successfully with KeyCloak server !",
 							mapObject.get("userName"));
 				} else {
-					logger.debug("Access token verified successfully with KeyCloak server !");
+					log.info("Access token verified successfully with KeyCloak server !");
 				}
 				AuthInfo authInfo = extractTokenIntoAuthInfo(token);
 
+				log.info("**************Authinfo *************"+ objectMapper.writeValueAsString(authInfo));
 				if (authInfo.getSub() == null || authInfo.getAud() == null || authInfo.getName() == null) {
 					throw new MiddlewareHaltException(VERIFICATION_EXCEPTION);
 				}
@@ -80,7 +84,7 @@ public class AuthorizationFilter implements Middleware {
 				throw new MiddlewareHaltException(VERIFICATION_EXCEPTION);
 			}
 		} catch (Exception e) {
-			logger.error("AuthorizationFilter: MiddlewareHaltException !");
+			log.error("AuthorizationFilter: MiddlewareHaltException !");
 			throw new MiddlewareHaltException(VERIFICATION_EXCEPTION);
 		}
 		return true;
@@ -117,7 +121,7 @@ public class AuthorizationFilter implements Middleware {
 				}
 			}
 		} catch (Exception e) {
-			logger.error("Claim extracted but verification failed !", e);
+			log.error("Claim extracted but verification failed !", e);
 		}
 		return authInfo;
 	}

@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.opensaber.registry.middleware.util.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +22,9 @@ import io.opensaber.registry.middleware.Middleware;
 @Component
 public class ValidationInterceptor implements HandlerInterceptor {
 
-	private static Logger logger = LoggerFactory.getLogger(ValidationInterceptor.class);
+	private static Logger log = LoggerFactory.getLogger(ValidationInterceptor.class);
+
+	ObjectMapper objectMapper = new ObjectMapper();
 
 	private Middleware validationFilter;
 
@@ -41,6 +44,7 @@ public class ValidationInterceptor implements HandlerInterceptor {
 		boolean result = true;
 		watch.start("ValidationInterceptor.execute");
 		result = validationFilter.execute(apiMessage);
+		log.info("*********** validation filter result *********", objectMapper.writeValueAsString(result));
 		watch.stop("ValidationInterceptor.execute");
 		return result;
 	}

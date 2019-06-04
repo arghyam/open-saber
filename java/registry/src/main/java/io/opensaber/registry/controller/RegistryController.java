@@ -1,6 +1,7 @@
 package io.opensaber.registry.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import io.opensaber.pojos.*;
@@ -14,12 +15,9 @@ import io.opensaber.registry.service.SearchService;
 import io.opensaber.registry.sink.shard.Shard;
 import io.opensaber.registry.sink.shard.ShardManager;
 import io.opensaber.registry.transform.*;
-import io.opensaber.registry.util.*;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.Map;
-
+import io.opensaber.registry.util.ReadConfigurator;
+import io.opensaber.registry.util.ReadConfiguratorFactory;
+import io.opensaber.registry.util.RecordIdentifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +26,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 public class RegistryController {
@@ -48,6 +50,9 @@ public class RegistryController {
     private DBConnectionInfoMgr dbConnectionInfoMgr;
 
     private Gson gson = new Gson();
+
+    private ObjectMapper objectMapper = new ObjectMapper();
+
     private Type mapType = new TypeToken<Map<String, Object>>() {
     }.getType();
     @Value("${audit.enabled}")
@@ -178,6 +183,7 @@ public class RegistryController {
 
             watch.start("RegistryController.addToExistingEntity");
             String resultId = registryService.addEntity(jsonString);
+            logger.info("*************** result id generated after entity is added to the neo4j *****" + resultId);
             RecordIdentifier recordId = new RecordIdentifier(shard.getShardLabel(), resultId);
             Map resultMap = new HashMap();
             String label = recordId.toString();
@@ -187,7 +193,7 @@ public class RegistryController {
             response.setResult(result);
             responseParams.setStatus(Response.Status.SUCCESSFUL);
             watch.stop("RegistryController.addToExistingEntity");
-            logger.debug("RegistryController : Entity {} added !", resultId);
+            logger.info("*************** final resposne after entity getting added to neo4j *****" + objectMapper.writeValueAsString(responseParams));
         } catch (Exception e) {
             logger.error("Exception in controller while adding entity !", e);
             response.setResult(result);
