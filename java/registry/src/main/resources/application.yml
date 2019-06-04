@@ -23,9 +23,9 @@ server:
   port: 8081
 registry:
   context:
-    base: ${registry_context_base:http://localhost:8081/}
+    base: ${registry_context_base:http://13.234.251.56:8081/}
   system:
-    base: ${registry_system_base:http://localhost:8081/opensaber/}
+    base: ${registry_system_base:http://13.234.251.56:8081/opensaber/}
   rootEntity:
         type: ${registry_rootentity_type:Teacher}
 
