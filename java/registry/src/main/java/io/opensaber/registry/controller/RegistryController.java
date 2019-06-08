@@ -193,7 +193,7 @@ public class RegistryController {
             response.setResult(result);
             responseParams.setStatus(Response.Status.SUCCESSFUL);
             watch.stop("RegistryController.addToExistingEntity");
-            logger.info("*************** final resposne after entity getting added to neo4j *****" + objectMapper.writeValueAsString(responseParams));
+            logger.info("*************** final response after entity getting added to neo4j *****" + objectMapper.writeValueAsString(responseParams));
         } catch (Exception e) {
             logger.error("Exception in controller while adding entity !", e);
             response.setResult(result);

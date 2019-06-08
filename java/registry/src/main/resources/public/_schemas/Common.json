@@ -156,6 +156,36 @@
         "YesNoCode-YES",
         "YesNoCode-NO"
       ]
+    },
+    "Usage": {
+      "type": "string",
+      "enum": [
+        "Drinking",
+        "Agriculture",
+        "Others"
+      ]
+    },
+    "Status": {
+      "type": "string",
+      "enum": [
+        "Created",
+        "Validated",
+        "Rejected"
+      ]
+    },
+    "Seasonality": {
+      "type": "string",
+      "enum": [
+        "Perennial",
+        "Seasonal"
+      ]
+    },
+    "OwnershipType": {
+      "type": "string",
+      "enum": [
+        "Public",
+        "Private"
+      ]
     }
   }
 }
