@@ -22,71 +22,74 @@
         "springCode": {
           "$id": "#/properties/springCode",
           "type": "string",
-          "title": "Spring Code"
+          "title": "Spring ID"
         },
-        "springName": {
-          "$id": "#/properties/springName",
+        "userId": {
+          "$id": "#/properties/userId",
           "type": "string",
-          "title": "Spring Name"
-        },
-        "organization": {
-          "$id": "#/properties/organization",
-          "type": ["string", "null"],
-          "title": "Spring added by "
-        },
-        "uploadedBy": {
-          "$id": "#/properties/uploadedBy",
-          "type": "string",
-          "title": "Uploaded By"
+          "title": "Id of the uploaded user"
         },
         "tenantId": {
           "$id": "#/properties/tenantId",
           "type": "string",
           "title" : "Tenant ID"
         },
-        "village": {
-          "$id": "#/properties/village",
-          "type": ["string", "null"],
-          "title": "Village"
-        },
-        "ownership": {
-          "$id": "#/properties/ownership",
+        "orgId": {
+          "$id": "#/properties/orgId",
           "type": "string",
-          "title": "Ownership Number"
-        },
-        "usage": {
-          "$id": "#/properties/usage",
-          "type": ["string", "null"],
-          "title": "Spring Usage"
-        },
-        "images": {
-          "$id": "#/properties/images",
-          "type": ["string", "null"],
-          "title": "Spring Image"
-
+          "title": "OrganizationId"
         },
         "latitude" : {
           "$id": "#/properties/latitude",
-          "type": "string",
+          "type": "number",
           "title": "Latitude"
         },
         "longitude" : {
           "$id": "#/properties/longitude",
-          "type": "string",
+          "type": "number",
           "title": "Longitude"
         },
         "elevation" : {
           "$id": "#/properties/elevation",
-          "type": "string",
+          "type": "number",
           "title": "Elevation"
         },
-        "crtdDttm": {
-          "$id": "#/properties/crtdDttm",
+        "accuracy" : {
+          "$id": "#/properties/accuracy",
+          "type": "number",
+          "title": "Accuracy"
+        },
+        "village": {
+          "$id": "#/properties/village",
+          "ref" : "Village.json#/definitions/village"
+        },
+        "numberOfHouseholds": {
+          "$id": "#/properties/numberOfHouseholds",
+          "type": "integer",
+          "title": "Number of dependents households"
+        },
+        "ownershipType": {
+          "$id": "#/properties/ownershipType",
+          "ref" : "Common.json#/definitions/OwnershipType",
+          "title": "OwnershipType"
+        },
+        "usage": {
+          "$id": "#/properties/usage",
+          "ref" : "Common.json#/definitions/Usage",
+          "title": "usage"
+        },
+        "images": {
+          "$id": "#/properties/images",
+          "type": ["string", "null"],
+          "title" : "images"
+        },
+        "createdTimeStamp": {
+          "$id": "#/properties/createdTimeStamp",
           "type": "string",
           "title" : "Created Date"
         },
-        "updtDttm": {
-          "$id": "#/properties/updtDttm",
+        "updatedTimeStamp": {
+          "$id": "#/properties/updatedTimeStamp",
           "type": "string",
           "title" : "Updated Date"
         }

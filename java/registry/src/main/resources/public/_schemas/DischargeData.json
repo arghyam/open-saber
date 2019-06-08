@@ -22,27 +22,65 @@
         "springCode": {
           "$id": "#/properties/springCode",
           "type": "string",
-          "title": "Spring Code"
-        },
-        "springName": {
-          "$id": "#/properties/springName",
-          "type": "string",
-          "title": "Spring Name"
-        },
-        "userId": {
-          "$id": "#/properties/userId",
-          "type": "string",
-          "title" : "User Id"
+          "title": "Spring ID"
         },
         "dischargeTime": {
           "$id": "#/properties/dischargeTime",
           "type": ["string", "null"],
           "title" : "Discharge Time"
         },
-        "createdDate": {
-          "$id": "#/properties/createdDate",
+        "volumeOfContainer": {
+          "$id": "#/properties/volumeOfContainer",
+          "type": "number",
+          "title": "Volume of container"
+        },
+        "litresPerSecond": {
+          "$id": "#/properties/litresPerSecond",
+          "type": ["number", "null"],
+          "title" : "litresPerSecond"
+        },
+        "userId": {
+          "$id": "#/properties/userId",
           "type": "string",
-          "title" : "Created Date"
+          "title": "The Userid"
+        },
+        "status": {
+          "$id": "#/properties/status",
+          "ref" : "Common.json#/definitions/Status"
+        },
+        "seasonality": {
+          "$id": "#/properties/seasonality",
+          "ref" : "Common.json#/definitions/Seasonality"
+        },
+        "months": {
+          "$id": "#/properties/months",
+          "type": ["string", "null"],
+          "title" : "months"
+        },
+        "tenantId": {
+          "$id": "#/properties/tenantId",
+          "type": "string",
+          "title": "The Tenantid Schema"
+        },
+        "orgId": {
+          "$id": "#/properties/orgId",
+          "type": "string",
+          "title": "The Org id"
+        },
+        "images": {
+          "$id": "#/properties/images",
+          "type": ["string", "null"],
+          "title" : "images"
+        },
+        "createdTimeStamp": {
+          "$id": "#/properties/createdTimeStamp",
+          "type": "string",
+          "title": "The Createdtimestamp"
+        },
+        "updatedTimeStamp": {
+          "$id": "#/properties/updatedTimeStamp",
+          "type": "string",
+          "title": "The Updatedtimestamp"
         }
       }
     }
