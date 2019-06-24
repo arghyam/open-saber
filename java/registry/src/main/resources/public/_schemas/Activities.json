@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "springs": {
+      "$ref": "#/definitions/activities"
+    }
+  },
+  "title":"activities",
+  "required": [
+    "activities"
+  ],
+  "definitions": {
+    "activities": {
+      "$id": "#/properties/activities",
+      "type": "object",
+      "title": "The Activities Data Schema",
+      "required": [
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "userId": {
+          "$id": "#/properties/userId",
+          "type": "string",
+          "title": "UserId"
+        },
+        "seasonality": {
+          "$id": "#/properties/seasonality",
+          "type": "string",
+          "title": "The Seasonality Schema"
+        },
+        "waterUseList": {
+          "$id": "#/properties/waterUseList",
+          "type": ["string","null"],
+          "title": "The Wateruselist Schema"
+        },
+        "months": {
+          "$id": "#/properties/months",
+          "type": ["string","null"],
+          "title": "The Months Schema"
+        },
+        "household": {
+          "$id": "#/properties/household",
+          "type": "string",
+          "title": "The Household Schema"
+        }
+      }
+    }
+  }
+}
