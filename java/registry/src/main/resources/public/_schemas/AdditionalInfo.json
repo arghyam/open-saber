@@ -19,30 +19,30 @@
       ],
       "additionalProperties": true,
       "properties": {
-        "springCode": {
-          "$id": "#/properties/springCode",
-          "type": "string",
-          "title": "The Springcode Schema"
+        "springCode":{
+          "$id":"#/properties/springCode",
+          "type":"string",
+          "title":"The Springcode Schema"
         },
-        "seasonality": {
-          "$id": "#/properties/seasonality",
-          "type": "string",
-          "title": "The Seasonality Schema"
+        "seasonality":{
+          "$id":"#/properties/seasonality",
+          "type":"string",
+          "title":"The Seasonality Schema"
         },
-        "waterUseList": {
-          "$id": "#/properties/waterUseList",
-          "type": ["string","null"],
-          "title": "The Wateruselist Schema"
+        "months":{
+          "$id":"#/properties/months",
+          "type": ["string", "null"],
+          "title":"The Months Schema"
         },
-        "months": {
-          "$id": "#/properties/months",
-          "type": ["string","null"],
-          "title": "The Months Schema"
+        "usage":{
+          "$id":"#/properties/usage",
+          "type": ["string", "null"],
+          "title":"The Usage Schema"
         },
-        "household": {
-          "$id": "#/properties/household",
-          "type": "string",
-          "title": "The Household Schema"
+        "numberOfHousehold":{
+          "$id":"#/properties/numberOfHousehold",
+          "type":"integer",
+          "title":"The Numberofhousehold Schema"
         }
       }
     }
