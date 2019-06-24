@@ -70,11 +70,11 @@ public class Response {
 	}
 
 	public enum API_ID {
-		CREATE("open-saber.registry.create"), READ("open-saber.registry.read"), UPDATE(
-				"open-saber.registry.update"), AUDIT("open-saber.registry.audit"), HEALTH(
-						"open-saber.registry.health"), DELETE("open-saber.registry.delete"), SEARCH(
-								"open-saber.registry.search"), SIGN("open-saber.utils.sign"), VERIFY(
-										"open-saber.utils.verify"), KEYS("open-saber.utils.keys"), ENCRYPT(
+		CREATE("org.forwater.create"), READ("org.forwater.read"), UPDATE(
+				"org.forwater.update"), AUDIT("org.forwater..audit"), HEALTH(
+						"org.forwater.health"), DELETE("org.forwater.delete"), SEARCH(
+								"org.forwater.search"), SIGN("org.forwater.sign"), VERIFY(
+										"open-saber.utils.verify"), KEYS("open-saber.utils"), ENCRYPT(
 												"open-saber.utils.encrypt"), DECRYPT(
 														"open-saber.utils.decrypt"), NONE("");
 		private String id;
