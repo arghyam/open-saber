@@ -24,25 +24,15 @@
           "type": "string",
           "title": "UserId"
         },
-        "seasonality": {
-          "$id": "#/properties/seasonality",
+        "action": {
+          "$id": "#/properties/action",
           "type": "string",
-          "title": "The Seasonality Schema"
+          "title": "The action schema"
         },
-        "waterUseList": {
-          "$id": "#/properties/waterUseList",
-          "type": ["string","null"],
-          "title": "The Wateruselist Schema"
-        },
-        "months": {
-          "$id": "#/properties/months",
-          "type": ["string","null"],
-          "title": "The Months Schema"
-        },
-        "household": {
-          "$id": "#/properties/household",
+        "createdAt": {
+          "$id": "#/properties/createdAt",
           "type": "string",
-          "title": "The Household Schema"
+          "title": "The createdAt time schema"
         }
       }
     }
