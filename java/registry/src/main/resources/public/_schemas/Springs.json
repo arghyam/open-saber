@@ -24,6 +24,11 @@
           "type": "string",
           "title": "Spring ID"
         },
+        "springName": {
+          "$id": "#/properties/springName",
+          "type": "string",
+          "title": "Spring Name"
+        },
         "userId": {
           "$id": "#/properties/userId",
           "type": "string",
