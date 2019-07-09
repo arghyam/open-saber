@@ -43,15 +43,10 @@
           "$id": "#/properties/dischargeDataOsid",
           "type": "string",
           "title": "The discharge data osid "
-        },"username": {
+        },"firstName": {
           "$id": "#/properties/username",
           "type": "string",
           "title": "username "
-        },
-        "springName":{
-          "$id": "#/properties/springName",
-          "type": "string",
-          "title": "Spring name"
         }
       }
     }
