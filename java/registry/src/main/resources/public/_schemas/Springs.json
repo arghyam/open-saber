@@ -23,9 +23,13 @@
           "$id": "#/properties/springCode",
           "type": "string",
           "title": "Spring ID"
-        },
-        "springName": {
+        },"springName": {
           "$id": "#/properties/springName",
+          "type": "string",
+          "title": "Spring Name"
+        },
+        "submittedBy": {
+          "$id": "#/properties/submittedBy",
           "type": "string",
           "title": "Spring Name"
         },
