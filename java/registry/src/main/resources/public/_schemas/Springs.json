@@ -28,8 +28,8 @@
           "type": "string",
           "title": "Spring Name"
         },
-        "springName": {
-          "$id": "#/properties/springName",
+        "submittedBy": {
+          "$id": "#/properties/submittedBy",
           "type": "string",
           "title": "Spring Name"
         },

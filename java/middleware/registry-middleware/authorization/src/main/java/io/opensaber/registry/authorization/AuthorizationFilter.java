@@ -51,6 +51,7 @@ public class AuthorizationFilter implements Middleware {
 	public boolean execute(APIMessage apiMessage) throws MiddlewareHaltException {
 		try {
 			Map<String, Object> mapObject = apiMessage.getRequestWrapper().getRequestHeaderMap();
+
 			Object tokenObject = mapObject.get(Constants.TOKEN_OBJECT);
 			log.error("***********************************"+tokenObject.toString());
 			if (tokenObject == null || tokenObject.toString().trim().isEmpty()) {
