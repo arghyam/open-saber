@@ -43,10 +43,18 @@
           "$id": "#/properties/dischargeDataOsid",
           "type": "string",
           "title": "The discharge data osid "
-        },"firstName": {
-          "$id": "#/properties/username",
+        },"notificationTitle": {
+          "$id": "#/properties/notificationTitle",
           "type": "string",
-          "title": "username "
+          "title": "notification title "
+        },"firstName": {
+          "$id": "#/properties/firstName",
+          "type": "string",
+          "title": "firstName "
+        },"reviewerName": {
+          "$id": "#/properties/firstName",
+          "type": "string",
+          "title": "firstName "
         }
       }
     }
