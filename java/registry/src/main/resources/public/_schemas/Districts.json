@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "springs": {
+      "$ref": "#/definitions/districts"
+    }
+  },
+  "title": "districts",
+  "required": [
+    "districts"
+  ],
+  "definitions": {
+    "districts": {
+      "$id": "#/properties/districts",
+      "type": "object",
+      "title": "The districts Data Schema",
+      "required": [
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "districts": {
+          "$id": "#/properties/action",
+          "type": "string",
+          "title": "The district schema"
+        },
+        "fKeyState": {
+          "$id": "#/properties/action",
+          "type": "string",
+          "title": "The foreign key schema"
+        },
+        "createdAt": {
+          "$id": "#/properties/createdAt",
+          "type": "string",
+          "title": "The createdAt time schema"
+        },"updatedAt": {
+          "$id": "#/properties/updatedAt",
+          "type": "string",
+          "title": "The updatedAt time schema"
+        }
+
+      }
+    }
+  }
+}

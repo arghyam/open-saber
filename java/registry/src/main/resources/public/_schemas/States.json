@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "springs": {
+      "$ref": "#/definitions/states"
+    }
+  },
+  "title": "states",
+  "required": [
+    "states"
+  ],
+  "definitions": {
+    "states": {
+      "$id": "#/properties/states",
+      "type": "object",
+      "title": "The states Data Schema",
+      "required": [
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "state": {
+          "$id": "#/properties/action",
+          "type": "string",
+          "title": "The action schema"
+        },
+        "createdAt": {
+          "$id": "#/properties/createdAt",
+          "type": "string",
+          "title": "The createdAt time schema"
+        },"updatedAt": {
+          "$id": "#/properties/createdAt",
+          "type": "string",
+          "title": "The createdAt time schema"
+        }
+
+}
+}
+}
+}
