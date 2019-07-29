@@ -3,38 +3,43 @@
   "type": "object",
   "properties": {
     "springs": {
-      "$ref": "#/definitions/states"
+      "$ref": "#/definitions/subDistricts"
     }
   },
-  "title": "states",
+  "title": "subDistricts",
   "required": [
-    "states"
+    "subDistricts"
   ],
   "definitions": {
-    "states": {
-      "$id": "#/properties/states",
+    "subDistricts": {
+      "$id": "#/properties/subDistricts",
       "type": "object",
-      "title": "The states Data Schema",
+      "title": "The subDistricts Data Schema",
       "required": [
       ],
       "additionalProperties": true,
       "properties": {
-        "state": {
+        "subDistricts": {
           "$id": "#/properties/action",
           "type": "string",
-          "title": "The action schema"
+          "title": "The subDistricts schema"
+        },
+        "fKeyDistricts": {
+          "$id": "#/properties/action",
+          "type": "string",
+          "title": "The foreign key schema"
         },
         "createdAt": {
           "$id": "#/properties/createdAt",
           "type": "string",
           "title": "The createdAt time schema"
         },"updatedAt": {
-          "$id": "#/properties/createdAt",
+          "$id": "#/properties/updatedAt",
           "type": "string",
-          "title": "The createdAt time schema"
+          "title": "The updatedAt time schema"
         }
 
-}
-}
-}
+      }
+    }
+  }
 }

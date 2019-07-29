@@ -38,7 +38,7 @@ database:
 
   # Providers available are NEO4J, SQLG, CASSANDRA, ORIENTDB, TINKERGRAPH (in-memory).
   # NOTE: Values given against 'shardId' must be unique
-  provider: ${database_provider:NEO4J}
+  provider: ${database_provider:SQLG}
 
   # Choose "none" as the propertyName if you don't want any shards. Otherwise
   # implement IShardAdvisor interface in your own ways. An example, SerialNumShardAdvisor
@@ -69,10 +69,10 @@ database:
       #     * 2. Relational databases (Postgresql, HSQLDB, H2, MariaDB, MySQL, MSSQLServer)
       #     ** http://sqlg.org/docs/2.0.0-SNAPSHOT/
       #     ** Example - Postgres - jdbc:postgresql://localhost:5432/yourdb
-      uri: ${connectionInfo_uri:bolt://13.234.251.56:7687}
+      uri: ${connectionInfo_uri:jdbc:postgresql://localhost:5432/arghyam}
 
-      username: ${connectionInfo_username:neo4j}
-      password: ${connectionInfo_password:nineleaps}
+      username: ${connectionInfo_username:postgres}
+      password: ${connectionInfo_password:postgres}
 
       # Any other shard information follows...
     #-
@@ -185,7 +185,7 @@ database:
 
   # Providers available are NEO4J, SQLG, TINKERGRAPH, CASSANDRA, ORIENTDB.
   # NOTE: Values given against 'shardId' must be unique
-  provider: ${database_provider:NEO4J}
+  provider: ${database_provider:SQLG}
 
   # Choose "none" as the propertyName if you don't want any shards. Otherwise
   # implement IShardAdvisor interface in your own ways. An example, SerialNumShardAdvisor

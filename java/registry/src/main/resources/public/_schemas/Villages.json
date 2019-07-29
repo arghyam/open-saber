@@ -3,38 +3,43 @@
   "type": "object",
   "properties": {
     "springs": {
-      "$ref": "#/definitions/states"
+      "$ref": "#/definitions/villages"
     }
   },
-  "title": "states",
+  "title": "villages",
   "required": [
-    "states"
+    "villages"
   ],
   "definitions": {
-    "states": {
-      "$id": "#/properties/states",
+    "villages": {
+      "$id": "#/properties/villages",
       "type": "object",
-      "title": "The states Data Schema",
+      "title": "The villages Data Schema",
       "required": [
       ],
       "additionalProperties": true,
       "properties": {
-        "state": {
+        "villages": {
           "$id": "#/properties/action",
           "type": "string",
-          "title": "The action schema"
+          "title": "The villages schema"
+        },
+        "fKeySubDistricts": {
+          "$id": "#/properties/action",
+          "type": "string",
+          "title": "The foreign key schema"
         },
         "createdAt": {
           "$id": "#/properties/createdAt",
           "type": "string",
           "title": "The createdAt time schema"
         },"updatedAt": {
-          "$id": "#/properties/createdAt",
+          "$id": "#/properties/updatedAt",
           "type": "string",
-          "title": "The createdAt time schema"
+          "title": "The updatedAt time schema"
         }
 
-}
-}
-}
+      }
+    }
+  }
 }
