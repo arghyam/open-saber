@@ -3,26 +3,26 @@
   "type": "object",
   "properties": {
     "springs": {
-      "$ref": "#/definitions/villages"
+      "$ref": "#/definitions/location"
     }
   },
   "title": "villages",
   "required": [
-    "villages"
+    "location"
   ],
   "definitions": {
-    "villages": {
-      "$id": "#/properties/villages",
+    "location": {
+      "$id": "#/properties/location",
       "type": "object",
-      "title": "The villages Data Schema",
+      "title": "The location Data Schema",
       "required": [
       ],
       "additionalProperties": true,
       "properties": {
-        "villages": {
+        "location": {
           "$id": "#/properties/action",
           "type": "string",
-          "title": "The villages schema"
+          "title": "The location schema"
         },
         "fKeySubDistricts": {
           "$id": "#/properties/action",

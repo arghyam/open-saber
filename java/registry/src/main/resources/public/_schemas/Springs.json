@@ -68,9 +68,9 @@
           "type": "number",
           "title": "Accuracy"
         },
-        "village": {
-          "$id": "#/properties/village",
-          "ref" : "Village.json#/definitions/village"
+        "location": {
+          "$id": "#/properties/location",
+          "ref" : "Village.json#/definitions/location"
         },
         "numberOfHouseholds": {
           "$id": "#/properties/numberOfHouseholds",
