@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "recentSearches": {
+      "$ref": "#/definitions/recentSearches"
+    }
+  },
+  "title":"recentSearches",
+  "required": [
+    "recentSearches"
+  ],
+  "definitions": {
+    "recentSearches": {
+      "$id": "#/properties/recentSearches",
+      "type": "object",
+      "title": "The recentSearches Schema",
+      "required": [
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "userId": {
+          "$id": "#/properties/userId",
+          "type": "string",
+          "title": "Unique User Id"
+        },
+        "searchString": {
+          "$id": "#/properties/searchString",
+          "type": "string",
+          "title": "searchString schema"
+
+        }
+      }
+    }
+  }
+}
