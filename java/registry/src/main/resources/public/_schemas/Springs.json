@@ -68,10 +68,6 @@
           "type": "number",
           "title": "Accuracy"
         },
-        "location" : {
-          "$id": "#/properties/location",
-          "ref" : "Location.json#/definitions/location"
-        },
         "numberOfHouseholds": {
           "$id": "#/properties/numberOfHouseholds",
           "type": "integer",
