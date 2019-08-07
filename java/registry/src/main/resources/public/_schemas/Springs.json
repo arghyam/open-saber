@@ -68,9 +68,9 @@
           "type": "number",
           "title": "Accuracy"
         },
-        "location": {
+        "location" : {
           "$id": "#/properties/location",
-          "ref" : "Village.json#/definitions/location"
+          "ref" : "Location.json#/definitions/location"
         },
         "numberOfHouseholds": {
           "$id": "#/properties/numberOfHouseholds",
@@ -101,6 +101,11 @@
           "$id": "#/properties/updatedTimeStamp",
           "type": "string",
           "title" : "Updated Date"
+        },
+        "address": {
+          "$id": "#/properties/address",
+          "type": "string",
+          "title" : "address"
         }
       }
     }

@@ -3,23 +3,23 @@
   "type": "object",
   "properties": {
     "springs": {
-      "$ref": "#/definitions/villages"
+      "$ref": "#/definitions/location"
     }
   },
-  "title": "villages",
+  "title": "location",
   "required": [
-    "villages"
+    "location"
   ],
   "definitions": {
-    "villages": {
-      "$id": "#/properties/villages",
+    "location": {
+      "$id": "#/properties/location",
       "type": "object",
       "title": "The location Data Schema",
       "required": [
       ],
       "additionalProperties": true,
       "properties": {
-        "villages": {
+        "location": {
           "$id": "#/properties/action",
           "type": "string",
           "title": "The location schema"
