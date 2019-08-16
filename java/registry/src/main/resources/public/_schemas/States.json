@@ -24,7 +24,12 @@
           "type": "string",
           "title": "The action schema"
         },
-        "createdAt": {
+        "count": {
+          "$id": "#/properties/action",
+          "type": "number",
+          "title": "The count schema"
+        },
+         "createdAt": {
           "$id": "#/properties/createdAt",
           "type": "string",
           "title": "The createdAt time schema"
