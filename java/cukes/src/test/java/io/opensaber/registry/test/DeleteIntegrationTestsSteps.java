@@ -1,18 +1,10 @@
 package io.opensaber.registry.test;
 
-import static org.junit.Assert.assertEquals;
 
 import java.util.Map;
 
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
-import org.springframework.web.client.RestTemplate;
 
-import cucumber.api.Scenario;
-import cucumber.api.java8.En;
-import io.opensaber.pojos.Response;
+import javax.xml.ws.Response;
 
 public class DeleteIntegrationTestsSteps extends RegistryTestBase implements En {
 

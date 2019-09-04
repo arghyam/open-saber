@@ -74,6 +74,8 @@ public class AuthorizationFilter implements Middleware {
 
 				log.info("**************Authinfo *************"+ objectMapper.writeValueAsString(authInfo));
 				if (authInfo.getSub() == null || authInfo.getAud() == null || authInfo.getName() == null) {
+
+					log.info("checking error"+ objectMapper.writeValueAsString(authInfo));
 					throw new MiddlewareHaltException(VERIFICATION_EXCEPTION);
 				}
 				List<SimpleGrantedAuthority> authorityList = new ArrayList<>();

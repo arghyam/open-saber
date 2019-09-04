@@ -22,7 +22,7 @@ public class KeyCloakServiceImpl {
 
 	private String ssoUrl = "http://13.234.251.56:8080/auth/";
 	private String ssoRealm = "Arghyam";
-	private PublicKey publicKey = toPublicKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAggxlcrHCDN9edhkgMxSfwwM8mozxYQOV/v6WA3JCSWKe3F/79UC9hl6gYvyUqJbPuJNADjjVRwYvTKhOvkdxVFHV6w7r1lnALoRhdRk3lpu6TlKl/Ehm0o3yhPbbiCNRrqZjBPv1xmNdT++T4r0pdogrol/eBxn7OjPb2Tn5zklsZgrKjnzGVovAvgq3JcjyaxiYxhPMDmCNSTFF6sPywfumzZSuj4M/xC1/1HnVjJ226wIfGH/y8Mu7qRrYiL99044Q9lsOgbmmpWhXH9kYSITGkHdVodo5SnDp4ojA5MB+XSwfMSW+ezrnOMi0zNTAOA7BH9o13rejROLEI0xfDQIDAQAB");
+	private PublicKey publicKey = toPublicKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgq9mNJRAYGq4bW6HbOY3u7K1a875Ul7/kECKff/fNKqLjIKGia2A1+gjE7n95q7oeiwq/BDbtvg93vID4vOzTf+VH+QbL31unJdLEMhdkWFiwe/pfgsHlOe0m0N2QZn9A31KEOVNoHMewUspLSBs+tS3SC1ow4f61/YYxFmCa+ADtnyS3km4C7PA+H4jhZ3o5UCBmd+UjnipHdtCUfhIM+I+3w7Q0uXVU2iF4x7vyJiarf0lltP+k7w8cnpqPHdpmEKXgtq33Mno3CYON1ZZjPqUHqe6ai0hGKZd/371ZxCU4vFwhnkSzpHToWt4cLG7wzWS+W3dzy5qTof8s9S+hQIDAQAB");
 
 	public PublicKey getPublicKey() {
 		return publicKey;
@@ -38,7 +38,7 @@ public class KeyCloakServiceImpl {
 	 */
 	public String verifyToken(String accessToken) throws VerificationException, Exception {
 		ObjectMapper objectMapper = new ObjectMapper();
-		logger.info("*********************"+objectMapper.writeValueAsString(System.getenv("sso_url")));
+		logger.info("*********************"+objectMapper.writeValueAsString(ssoUrl));
 		AccessToken token = RSATokenVerifier.verifyToken(accessToken, publicKey, ssoUrl + "realms/" + ssoRealm, true,
 				true);
 		String userId = token.getSubject();
