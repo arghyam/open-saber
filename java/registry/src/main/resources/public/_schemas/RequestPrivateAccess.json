@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "Person": {
+      "$ref": "#/definitions/requestPrivateAccess"
+    }
+  },
+  "title":"requestPrivateAccess",
+  "required": [
+    "requestPrivateAccess"
+  ],
+  "definitions": {
+    "requestPrivateAccess": {
+      "$id": "#/properties/requestPrivateAccess",
+      "type": "object",
+      "title": "The requestPrivateAccess Data Schema",
+      "required": [
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "springCode": {
+          "$id": "#/properties/springCode",
+          "type": "string",
+          "title": "Spring ID"
+        },
+          "userId": {
+          "$id": "#/properties/userId",
+          "type": "string",
+          "title": "The Userid"
+        }
+      }
+    }
+  }
+}
