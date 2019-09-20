@@ -28,6 +28,16 @@
           "$id": "#/properties/userId",
           "type": "string",
           "title": "The Userid"
+        },
+        "createdTimeStamp": {
+          "$id": "#/properties/createdTimeStamp",
+          "type": "string",
+          "title" : "Created Date"
+        },
+        "updatedTimeStamp": {
+          "$id": "#/properties/updatedTimeStamp",
+          "type": "string",
+          "title" : "Updated Date"
         }
       }
     }
