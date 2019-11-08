@@ -20,7 +20,7 @@ public class KeyCloakServiceImpl {
 
 	private static Logger logger = LoggerFactory.getLogger(KeyCloakServiceImpl.class);
 
-	private String ssoUrl = "http://13.234.251.56:8080/auth/";
+	private String ssoUrl = "http://15.206.32.13:8080/auth/";
 	private String ssoRealm = "Arghyam";
 	private PublicKey publicKey = toPublicKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgq9mNJRAYGq4bW6HbOY3u7K1a875Ul7/kECKff/fNKqLjIKGia2A1+gjE7n95q7oeiwq/BDbtvg93vID4vOzTf+VH+QbL31unJdLEMhdkWFiwe/pfgsHlOe0m0N2QZn9A31KEOVNoHMewUspLSBs+tS3SC1ow4f61/YYxFmCa+ADtnyS3km4C7PA+H4jhZ3o5UCBmd+UjnipHdtCUfhIM+I+3w7Q0uXVU2iF4x7vyJiarf0lltP+k7w8cnpqPHdpmEKXgtq33Mno3CYON1ZZjPqUHqe6ai0hGKZd/371ZxCU4vFwhnkSzpHToWt4cLG7wzWS+W3dzy5qTof8s9S+hQIDAQAB");
 
